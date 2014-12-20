@@ -7,6 +7,7 @@ NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
 BaltimorePM25 <- subset(NEI, fips == "24510")
+#Assume Motor Vehicles means "ON-ROAD"
 BaltimorePM25Motor <- subset(BaltimorePM25, type == "ON-ROAD")
 
 totalBaltimorePM25MotorByYear <- aggregate(BaltimorePM25Motor$Emissions, 
