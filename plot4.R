@@ -1,5 +1,4 @@
 # load the require library
-library(plyr)
 library(ggplot2)
 
 # Assume the files are in the current working directory
