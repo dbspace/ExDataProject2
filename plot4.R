@@ -22,7 +22,7 @@ coalEmissionsByYear <- aggregate(coalCombustion$Emissions,
                                  list(coalCombustion$year), FUN = "sum")
 
 png("plot4.png")
-plot(coalEmissionsByYear, type = "l", xlab = "Year", 
-     main = expression('Coal Combustion-related PM'[2.5]* " Emissions from 1999 to 2008"), 
-     ylab = expression('Total PM'[2.5]*" Emission"))
+ggplot(coalEmissionsByYear, aes(Group.1, x)) + geom_line() + 
+        labs(title = expression('Coal Combustion-related PM'[2.5]* " Emissions from 1999 to 2008"), 
+             x = "Year", y = expression('Total PM'[2.5]*" Emission"))
 dev.off()
